@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block titulo %} Lista de Departamentos {% endblock %}
+
+{% block estilo %}
+  table{
+    border: 1px dotted #8B4513;
+    font-size: 1.2em;
+  }
+  td{
+    padding: 0.5em;
+  }
+{% endblock %}
+
+{% block conteudo %}
+<h1>
+  Lista de Departamentos
+</h1>
+<table> <!--style="border: 1px dotted blue"-->
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Andar</th>
+      <th>Ramal</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for d in departamentos %}
+    <tr>
+      <td>{{ d.nome }}</td>
+      <td>{{ d.andar }}</td>
+      <td>{{ d.ramal }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{% endblock %}

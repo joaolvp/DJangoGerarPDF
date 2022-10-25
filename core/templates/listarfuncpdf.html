@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block titulo %} Lista de Funcionários {% endblock %}
+
+{% block estilo %}
+  table{
+    border: 1px dotted #8B4513;
+    font-size: 1.2em;
+  }
+  td{
+    padding: 0.5em;
+  }
+{% endblock %}
+
+{% block conteudo %}
+<h1>
+  Lista de Funcionários
+</h1>
+<table> <!--style="border: 1px dotted blue"-->
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Função</th>
+      <th>Departamento</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for f in funcionarios %}
+    <tr>
+      <td>{{ f }}</td>
+      <td>{{ f.funcao }}</td>
+      <td>{{ f.depto }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{% endblock %}
